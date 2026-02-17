@@ -5,38 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O podjetju - Simon Sodnik</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="slike/domov/logo.PNG" alt="Simon Sodnik">
-                <div>
-                    <span class="logo-name">Simon Sodnik</span>
-                    <span class="logo-desc">Stavbno kleparstvo & krovstvo</span>
-                </div>
-            </a>
-            
-            <nav class="nav">
-                <ul class="nav-menu">
-                    <li><a href="index.html">Domov</a></li>
-                    <li><a href="about.html">Podjetje</a></li>
-                    <li><a href="services.html">Storitve</a></li>
-                    <li><a href="references.html">Reference</a></li>
-                    <li><a href="history.html">Zgodovina</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- HEADER -->
+    <div data-include="header.html"></div>
 
     <div class="page-header">
         <div class="container">
             <h1>O podjetju</h1>
-            <div class="breadcrumb">
-                <a href="index.html">Domov</a> / O podjetju
-            </div>
         </div>
     </div>
 
@@ -128,34 +106,8 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Simon Sodnik s.p.</h3>
-                    <p>Stavbno kleparstvo in krovstvo</p>
-                    <p>Zalog pri Cerkljah 55<br>4207 Cerklje na Gorenjskem</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Kontakt</h3>
-                    <p>📞 031 760 594</p>
-                    <p>📠 04 252 10 90</p>
-                    <p>✉️ simon.sodnik@siol.net</p>
-                    <p>🌐 www.sodnik.si</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Hitre povezave</h3>
-                    <p><a href="about.html">O podjetju</a></p>
-                    <p><a href="services.html">Storitve</a></p>
-                    <p><a href="references.html">Reference</a></p>
-                    <p><a href="history.html">Zgodovina</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Simon Sodnik. Vse pravice pridržane. | <a href="#" style="color: white;">Pravna obvestila</a> | <a href="#" style="color: white;">O piškotkih</a> | Izdelava: UrosG</p>
-            </div>
-        </div>
-    </footer>
+    <!-- FOOTER - vključen preko JavaScript -->
+    <div data-include="footer.html"></div>
 
     <script src="script.js"></script>
 </body>

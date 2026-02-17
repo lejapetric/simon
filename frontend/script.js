@@ -1,5 +1,32 @@
 // API base URL - spremenite glede na vaš backend
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'http://localhost:3000/api';
+
+// Funkcija za vključevanje HTML datotek
+async function includeHTML() {
+    const includeElements = document.querySelectorAll('[data-include]');
+    
+    for (const element of includeElements) {
+        const file = element.getAttribute('data-include');
+        try {
+            const response = await fetch(file);
+            if (response.ok) {
+                const content = await response.text();
+                element.innerHTML = content;
+                
+                // Po vključitvi headerja ponovno nastavi aktivni menu
+                if (file === 'header.html') {
+                    setActiveMenu();
+                }
+            } else {
+                console.error('Napaka pri nalaganju:', file);
+                element.innerHTML = `<p style="color: red; text-align: center;">Napaka pri nalaganju ${file}</p>`;
+            }
+        } catch (error) {
+            console.error('Napaka pri nalaganju:', error);
+            element.innerHTML = `<p style="color: red; text-align: center;">Napaka pri nalaganju ${file}</p>`;
+        }
+    }
+}
 
 // Preveri povezavo z backendom
 async function checkBackendConnection() {
@@ -146,28 +173,12 @@ async function submitContactForm(formData) {
     }
 }
 
-// Cookie banner
-function initCookieBanner() {
-    if (localStorage.getItem('cookiesAccepted')) return;
-    
-    const banner = document.getElementById('cookieBanner');
-    if (!banner) return;
-    
-    banner.classList.add('show');
-    
-    document.getElementById('acceptCookies').addEventListener('click', () => {
-        localStorage.setItem('cookiesAccepted', 'true');
-        banner.classList.remove('show');
-    });
-    
-    document.getElementById('declineCookies').addEventListener('click', () => {
-        localStorage.setItem('cookiesAccepted', 'false');
-        banner.classList.remove('show');
-    });
-}
-
 // Inicializacija ob nalaganju strani
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // Najprej vključi header in footer
+    await includeHTML();
+    
+    // Nato inicializiraj ostale funkcije
     setActiveMenu();
     checkBackendConnection();
     initCookieBanner();
@@ -191,4 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
         });
     });
+});
+
+// Ponovno zaženi setActiveMenu po morebitnih dinamičnih spremembah
+window.addEventListener('popstate', () => {
+    setTimeout(setActiveMenu, 100);
 });
