@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference - Simon Sodnik</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="references.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+        <!-- HEADER -->
+    <div data-include="header.html"></div>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Reference</h1>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Vsi projekti</button>
+                <button class="filter-btn" data-filter="krovstvo">Krovstvo</button>
+                <button class="filter-btn" data-filter="kleparstvo">Kleparstvo</button>
+                <button class="filter-btn" data-filter="sanacija">Sanacije</button>
+                <button class="filter-btn" data-filter="lesena konstrukcija">Lesene konstrukcije</button>
+            </div>
+            
+            <div id="projects-container">
+                <!-- Galerija projektov -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin: 40px 0;">
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/projekt1.jpg" alt="Projekt 1" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 15px; background: white;">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">Projekt 1</h4>
+                            <p style="font-size: 14px; color: var(--text-light);">Stavbno kleparstvo in krovstvo</p>
+                        </div>
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/projekt2.jpg" alt="Projekt 2" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 15px; background: white;">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">Projekt 2</h4>
+                            <p style="font-size: 14px; color: var(--text-light);">Stavbno kleparstvo in krovstvo</p>
+                        </div>
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/projekt3.jpg" alt="Projekt 3" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 15px; background: white;">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">Projekt 3</h4>
+                            <p style="font-size: 14px; color: var(--text-light);">Stavbno kleparstvo in krovstvo</p>
+                        </div>
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/projekt4.jpg" alt="Projekt 4" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 15px; background: white;">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">Projekt 4</h4>
+                            <p style="font-size: 14px; color: var(--text-light);">Stavbno kleparstvo in krovstvo</p>
+                        </div>
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/projekt5.jpg" alt="Projekt 5" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 15px; background: white;">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">Projekt 5</h4>
+                            <p style="font-size: 14px; color: var(--text-light);">Stavbno kleparstvo in krovstvo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Vsi projekti po kategorijah</h2>
+            
+            <div class="project-category">
+                <h3 class="category-title">Tondach kritina</h3>
+                <ul class="project-list">
+                    <li><span>Poslovno-stanovanjski objekt Kamnik</span> <span class="year">September 2010</span></li>
+                    <li><span>Stanovanjski objekt Ljubljana</span> <span class="year">Julij 2010</span></li>
+                    <li><span>Stanovanjski objekt Kranj</span> <span class="year">April 2010</span></li>
+                    <li><span>Nadstrešek k objektu v Medvodah</span> <span class="year">Oktober 2009</span></li>
+                    <li><span>Stanovanjski objekt Cerklje</span> <span class="year">September 2008</span></li>
+                    <li><span>Stanovanjski objekt Medvode</span> <span class="year">Avgust 2008</span></li>
+                    <li><span>Poslovno-stanovanjski objekt Zalog</span> <span class="year">Maj 2007</span></li>
+                    <li><span>Sakralni objekt cerkev Zalog</span> <span class="year">September 1998</span></li>
+                </ul>
+            </div>
+            
+            <div class="project-category">
+                <h3 class="category-title">Bramac kritina</h3>
+                <ul class="project-list">
+                    <li><span>Gospodarsko poslopje Zalog</span> <span class="year">September 2010</span></li>
+                    <li><span>Stanovanjski objekt Zalog</span> <span class="year">September 2009</span></li>
+                    <li><span>Stanovanjski objekt Velesovo</span> <span class="year">September 2009</span></li>
+                    <li><span>Večstanovanjski objekt Kranj</span> <span class="year">September 2004</span></li>
+                    <li><span>Nadstrešek k objektu v Cerkljah</span> <span class="year">Maj 2004</span></li>
+                </ul>
+            </div>
+            
+            <div class="project-category">
+                <h3 class="category-title">Creaton kritina</h3>
+                <ul class="project-list">
+                    <li><span>Stanovanjski objekt Cerklje</span> <span class="year">September 2010</span></li>
+                    <li><span>Stanovanjski objekt Ljubljana</span> <span class="year">Avgust 2010</span></li>
+                    <li><span>Stanovanjski objekt Virmaše - Škofja Loka</span> <span class="year">April 2010</span></li>
+                    <li><span>Poslovni objekt Kranjska Gora</span> <span class="year">September 2009</span></li>
+                    <li><span>Stanovanjski objekt Vodice</span> <span class="year">Julij 2009</span></li>
+                    <li><span>Stanovanjski objekt Medvode</span> <span class="year">Julij 2009</span></li>
+                    <li><span>Objekt Grad Goričane</span> <span class="year">Julij 2009</span></li>
+                </ul>
+            </div>
+            
+            <div class="project-category">
+                <h3 class="category-title">Erlus kritina</h3>
+                <ul class="project-list">
+                    <li><span>Objekt cerkev Cerklje</span> <span class="year">Avgust 2008</span></li>
+                </ul>
+            </div>
+            
+            <div class="project-category">
+                <h3 class="category-title">Trimo kritina</h3>
+                <ul class="project-list">
+                    <li><span>Mehanična delavnica Citroen Mengeš</span> <span class="year">September 2010</span></li>
+                    <li><span>Stanovanjski objekt Medvode</span> <span class="year">Julij 2007</span></li>
+                </ul>
+            </div>
+            
+            <div class="project-category">
+                <h3 class="category-title">Sanacije</h3>
+                <ul class="project-list">
+                    <li><span>Objekt Grad Goričane</span> <span class="year">Julij 2009</span></li>
+                    <li><span>Sakralni objekt cerkev Lahovče</span> <span class="year">Junij 1997</span></li>
+                </ul>
+            </div>
+            
+            <!-- CERTIFIKATI -->
+            <div style="margin-top: 80px; padding-top: 40px; border-top: 2px solid var(--accent);">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Naši certifikati in dokazila</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/certifikati/gerrard.jpg" alt="Certifikat" style="width: 100%; height: 250px; object-fit: cover;">
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/certifikati/Image0002.jpg" alt="Certifikat" style="width: 100%; height: 250px; object-fit: cover;">
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/certifikati/Image0003.jpg" alt="Certifikat" style="width: 100%; height: 250px; object-fit: cover;">
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/certifikati/Image0004.jpg" alt="Certifikat" style="width: 100%; height: 250px; object-fit: cover;">
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/certifikati/Image0005.jpg" alt="Certifikat" style="width: 100%; height: 250px; object-fit: cover;">
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/certifikati/Image0006.jpg" alt="Certifikat" style="width: 100%; height: 250px; object-fit: cover;">
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/certifikati/Image0007.jpg" alt="Certifikat" style="width: 100%; height: 250px; object-fit: cover;">
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                        <img src="slike/projekti/certifikati/Image0008.jpg" alt="Certifikat" style="width: 100%; height: 250px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- FOOTER - vključen preko JavaScript -->
+    <div data-include="footer.html"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
