@@ -72,69 +72,21 @@
     </section>
 
     <section class="section bg-light">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">Vsi projekti po kategorijah</h2>
-            
-            <div class="project-category">
-                <h3 class="category-title">Tondach kritina</h3>
-                <ul class="project-list">
-                    <li><span>Poslovno-stanovanjski objekt Kamnik</span> <span class="year">September 2010</span></li>
-                    <li><span>Stanovanjski objekt Ljubljana</span> <span class="year">Julij 2010</span></li>
-                    <li><span>Stanovanjski objekt Kranj</span> <span class="year">April 2010</span></li>
-                    <li><span>Nadstrešek k objektu v Medvodah</span> <span class="year">Oktober 2009</span></li>
-                    <li><span>Stanovanjski objekt Cerklje</span> <span class="year">September 2008</span></li>
-                    <li><span>Stanovanjski objekt Medvode</span> <span class="year">Avgust 2008</span></li>
-                    <li><span>Poslovno-stanovanjski objekt Zalog</span> <span class="year">Maj 2007</span></li>
-                    <li><span>Sakralni objekt cerkev Zalog</span> <span class="year">September 1998</span></li>
-                </ul>
+    <div class="container">
+        <h2 class="section-title" style="text-align: center;">Vsi projekti po kategorijah</h2>
+        
+        <!-- SEMAFOR za prikaz stanja -->
+        <div id="projects-loading" style="text-align: center; padding: 40px; display: none;">
+            <div class="spinner" style="border: 4px solid rgba(0,0,0,0.1); border-left-color: var(--accent); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 15px;"></div>
+            <p>Nalagam projekte iz baze...</p>
+        </div>
+        
+        <div id="projects-list">
+            <!-- Projekti se bodo naložili dinamično iz MongoDB -->
+            <div style="text-align: center; padding: 20px; color: var(--text-light);">
+                <p>Nalaganje projektov...</p>
             </div>
-            
-            <div class="project-category">
-                <h3 class="category-title">Bramac kritina</h3>
-                <ul class="project-list">
-                    <li><span>Gospodarsko poslopje Zalog</span> <span class="year">September 2010</span></li>
-                    <li><span>Stanovanjski objekt Zalog</span> <span class="year">September 2009</span></li>
-                    <li><span>Stanovanjski objekt Velesovo</span> <span class="year">September 2009</span></li>
-                    <li><span>Večstanovanjski objekt Kranj</span> <span class="year">September 2004</span></li>
-                    <li><span>Nadstrešek k objektu v Cerkljah</span> <span class="year">Maj 2004</span></li>
-                </ul>
-            </div>
-            
-            <div class="project-category">
-                <h3 class="category-title">Creaton kritina</h3>
-                <ul class="project-list">
-                    <li><span>Stanovanjski objekt Cerklje</span> <span class="year">September 2010</span></li>
-                    <li><span>Stanovanjski objekt Ljubljana</span> <span class="year">Avgust 2010</span></li>
-                    <li><span>Stanovanjski objekt Virmaše - Škofja Loka</span> <span class="year">April 2010</span></li>
-                    <li><span>Poslovni objekt Kranjska Gora</span> <span class="year">September 2009</span></li>
-                    <li><span>Stanovanjski objekt Vodice</span> <span class="year">Julij 2009</span></li>
-                    <li><span>Stanovanjski objekt Medvode</span> <span class="year">Julij 2009</span></li>
-                    <li><span>Objekt Grad Goričane</span> <span class="year">Julij 2009</span></li>
-                </ul>
-            </div>
-            
-            <div class="project-category">
-                <h3 class="category-title">Erlus kritina</h3>
-                <ul class="project-list">
-                    <li><span>Objekt cerkev Cerklje</span> <span class="year">Avgust 2008</span></li>
-                </ul>
-            </div>
-            
-            <div class="project-category">
-                <h3 class="category-title">Trimo kritina</h3>
-                <ul class="project-list">
-                    <li><span>Mehanična delavnica Citroen Mengeš</span> <span class="year">September 2010</span></li>
-                    <li><span>Stanovanjski objekt Medvode</span> <span class="year">Julij 2007</span></li>
-                </ul>
-            </div>
-            
-            <div class="project-category">
-                <h3 class="category-title">Sanacije</h3>
-                <ul class="project-list">
-                    <li><span>Objekt Grad Goričane</span> <span class="year">Julij 2009</span></li>
-                    <li><span>Sakralni objekt cerkev Lahovče</span> <span class="year">Junij 1997</span></li>
-                </ul>
-            </div>
+        </div>
             
             <!-- CERTIFIKATI -->
             <div style="margin-top: 80px; padding-top: 40px; border-top: 2px solid var(--accent);">

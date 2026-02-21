@@ -1,6 +1,10 @@
 // API base URL - spremenite glede na vaš backend
 const API_BASE = 'http://localhost:3000/api';
 
+// ============================================
+// SPLOŠNE FUNKCIJE
+// ============================================
+
 // Funkcija za vključevanje HTML datotek
 async function includeHTML() {
     const includeElements = document.querySelectorAll('[data-include]');
@@ -101,6 +105,40 @@ function initHamburgerMenu() {
     }
 }
 
+// Dodamo overlay ozadje za meni
+function addMenuOverlay() {
+    const style = document.createElement('style');
+    style.textContent = `
+        body.menu-open::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        body.menu-open main,
+        body.menu-open footer {
+            pointer-events: none;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Funkcija za inicializacijo cookie bannera
+function initCookieBanner() {
+    // Vaša koda za cookie banner
+    console.log('🍪 Cookie banner inicializiran');
+}
 
 // Preveri povezavo z backendom
 async function checkBackendConnection() {
@@ -115,8 +153,232 @@ async function checkBackendConnection() {
     }
 }
 
-// Naloži projekte iz APIja
-async function loadProjects(containerId, filters = {}) {
+// Pomožna funkcija za prikaz napak
+function showErrorMessage(message, containerId = 'projects-container') {
+    const container = document.getElementById(containerId);
+    if (container) {
+        container.innerHTML += `
+            <div style="background: #ffebee; color: #c62828; padding: 20px; border-radius: 5px; margin: 20px 0;">
+                <strong>Napaka:</strong> ${message}
+            </div>
+        `;
+    }
+}
+
+// ============================================
+// FUNKCIJE ZA REFERENCE (PROJEKTI)
+// ============================================
+
+// Naloži vse projekte
+async function loadProjects() {
+    try {
+        console.log('📥 Nalagam vse projekte...');
+        const response = await fetch('/api/projects');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const projects = await response.json();
+        console.log('✅ Naloženih projektov:', projects.length);
+        
+        // Združi projekte po kategorijah
+        const projectsByCategory = {};
+        projects.forEach(project => {
+            const category = project.kategorija;
+            if (!projectsByCategory[category]) {
+                projectsByCategory[category] = [];
+            }
+            projectsByCategory[category].push(project);
+        });
+        
+        displayProjectsByCategory(projectsByCategory);
+        displayProjectGallery(projects);
+        displayProjectsList(projectsByCategory);
+    } catch (error) {
+        console.error('❌ Napaka pri nalaganju projektov:', error);
+        showErrorMessage('Napaka pri nalaganju projektov. Preverite povezavo z strežnikom.');
+    }
+}
+
+// Naloži projekte po kategoriji
+async function loadProjectsByCategory(category) {
+    try {
+        console.log(`📥 Nalagam projekte za kategorijo: ${category}`);
+        const response = await fetch(`/api/projects/category/${encodeURIComponent(category)}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const projects = await response.json();
+        
+        const projectsByCategory = {
+            [category]: projects
+        };
+        
+        displayProjectsByCategory(projectsByCategory);
+        
+        // Posodobi tudi seznam
+        const allProjects = await fetch('/api/projects').then(res => res.json());
+        const allProjectsByCategory = {};
+        allProjects.forEach(project => {
+            const cat = project.kategorija;
+            if (!allProjectsByCategory[cat]) {
+                allProjectsByCategory[cat] = [];
+            }
+            allProjectsByCategory[cat].push(project);
+        });
+        displayProjectsList(allProjectsByCategory);
+        
+    } catch (error) {
+        console.error('❌ Napaka pri nalaganju projektov po kategoriji:', error);
+        showErrorMessage('Napaka pri nalaganju projektov.');
+    }
+}
+
+// Naloži kategorije za gumbe
+async function loadCategories() {
+    try {
+        console.log('📥 Nalagam kategorije...');
+        const response = await fetch('/api/categories');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const categories = await response.json();
+        console.log('✅ Naloženih kategorij:', categories.length);
+        
+        const filterContainer = document.querySelector('.filter-buttons');
+        if (filterContainer) {
+            // Dodamo kategorije kot gumbe (razen že obstoječih)
+            categories.forEach(category => {
+                if (!document.querySelector(`[data-filter="${category}"]`)) {
+                    const btn = document.createElement('button');
+                    btn.className = 'filter-btn';
+                    btn.setAttribute('data-filter', category);
+                    btn.textContent = category;
+                    
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        loadProjectsByCategory(category);
+                    });
+                    
+                    filterContainer.appendChild(btn);
+                }
+            });
+        }
+    } catch (error) {
+        console.error('❌ Napaka pri nalaganju kategorij:', error);
+    }
+}
+
+// Prikaži projekte razporejene po kategorijah (zgornji del)
+function displayProjectsByCategory(projectsByCategory) {
+    const container = document.getElementById('projects-categories');
+    if (!container) return;
+    
+    let html = '';
+    
+    for (const [category, projects] of Object.entries(projectsByCategory)) {
+        html += `
+            <div class="project-category">
+                <h3 class="category-title">${category}</h3>
+                <ul class="project-list">
+        `;
+        
+        projects.forEach(project => {
+            const mesec = project.datum_izdelave?.mesec || 1;
+            const leto = project.datum_izdelave?.leto || 'N/A';
+            const datum = `${mesec}. ${leto}`;
+            
+            html += `
+                <li>
+                    <span>${project.ime_projekta} - ${project.opravljena_dela}</span>
+                    <span class="year">${datum}</span>
+                </li>
+            `;
+        });
+        
+        html += `
+                </ul>
+            </div>
+        `;
+    }
+    
+    container.innerHTML = html;
+}
+
+// Prikaži seznam projektov po kategorijah (spodnji del)
+function displayProjectsList(projectsByCategory) {
+    const container = document.getElementById('projects-list');
+    if (!container) return;
+    
+    let html = '';
+    
+    for (const [category, projects] of Object.entries(projectsByCategory)) {
+        html += `
+            <div class="project-category">
+                <h3 class="category-title">${category}</h3>
+                <ul class="project-list">
+        `;
+        
+        projects.forEach(project => {
+            const mesec = project.datum_izdelave?.mesec || 1;
+            const leto = project.datum_izdelave?.leto || 'N/A';
+            const datum = `${mesec}. ${leto}`;
+            
+            html += `
+                <li>
+                    <span>${project.ime_projekta} - ${project.opravljena_dela}</span>
+                    <span class="year">${datum}</span>
+                </li>
+            `;
+        });
+        
+        html += `
+                </ul>
+            </div>
+        `;
+    }
+    
+    container.innerHTML = html;
+}
+
+// Prikaži galerijo projektov (zgornji del s slikami)
+function displayProjectGallery(projects) {
+    const galleryContainer = document.querySelector('#projects-container .gallery-grid');
+    if (!galleryContainer) return;
+    
+    // Vzamemo prvih 5 projektov za galerijo
+    const featuredProjects = projects.slice(0, 5);
+    
+    let galleryHtml = '';
+    
+    featuredProjects.forEach(project => {
+        // Če ni slike, uporabimo placeholder
+        const imageUrl = project.slike && project.slike[0] ? 
+            project.slike[0] : 
+            'slike/projekti/placeholder.jpg';
+        
+        galleryHtml += `
+            <div class="gallery-item" style="border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                <img src="${imageUrl}" alt="${project.ime_projekta}" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 15px; background: white;">
+                    <h4 style="color: var(--primary); margin-bottom: 10px;">${project.ime_projekta}</h4>
+                    <p style="font-size: 14px; color: var(--text-light);">${project.kategorija}</p>
+                </div>
+            </div>
+        `;
+    });
+    
+    galleryContainer.innerHTML = galleryHtml;
+}
+
+// Naloži projekte iz APIja (stara funkcija, ohranjena za kompatibilnost)
+async function loadProjectsOld(containerId, filters = {}) {
     const container = document.getElementById(containerId);
     if (!container) return;
     
@@ -230,35 +492,54 @@ async function submitContactForm(formData) {
     }
 }
 
-// Funkcija za inicializacijo cookie bannera
-function initCookieBanner() {
-    // Vaša koda za cookie banner
-}
+// ============================================
+// INICIALIZACIJA OB NALAGANJU STRANI
+// ============================================
 
-// Inicializacija ob nalaganju strani
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('📱 Stran se nalaga...');
     
     // Najprej vključi header in footer
     await includeHTML();
+    addMenuOverlay();
     
     // Nato inicializiraj ostale funkcije
     checkBackendConnection();
     initCookieBanner();
     
-    // Če smo na strani z referencami, naloži projekte
-    if (document.getElementById('projects-container')) {
-        const category = new URLSearchParams(window.location.search).get('category');
-        loadProjects('projects-container', category ? { category } : {});
+    // Preverimo kje smo - glede na URL
+    const path = window.location.pathname;
+    console.log('📍 Trenutna pot:', path);
+    
+    // Če smo na strani z referencami
+    if (path.includes('references.html') || document.getElementById('projects-container')) {
+        console.log('🔍 Na strani Reference, nalagam projekte...');
+        loadProjects();
+        loadCategories();
+        
+        // Event listenerji za gumbe (za vsak primer, če so že v HTML)
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-filter');
+                if (category === 'all') {
+                    loadProjects();
+                } else {
+                    loadProjectsByCategory(category);
+                }
+            });
+        });
     }
     
-    // Če smo na strani z referencami in imamo filter gumbe
+    // Če smo na strani z referencami in imamo filter gumbe (stari način)
     document.querySelectorAll('[data-filter]').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const filter = btn.getAttribute('data-filter');
             const filters = filter === 'all' ? {} : { category: filter };
-            loadProjects('projects-container', filters);
+            loadProjectsOld('projects-container', filters);
             
             // Označi aktivni filter
             document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
@@ -266,35 +547,3 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 });
-
-// Dodamo overlay ozadje za meni
-function addMenuOverlay() {
-    const style = document.createElement('style');
-    style.textContent = `
-        body.menu-open::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        body.menu-open main,
-        body.menu-open footer {
-            pointer-events: none;
-        }
-    `;
-    document.head.appendChild(style);
-}
-
-// Pokličemo funkcijo za dodajanje overlay stila
-addMenuOverlay();
