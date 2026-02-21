@@ -1,8 +1,0 @@
-.git*
-dockerfile
-docker-compose*
-.dockerignore
-.jshintrc
-package-lock.json
-node_modules
-*.md

@@ -1,0 +1,20 @@
+services:
+  node-api:
+    container_name: simon-app
+    ports:
+      - "3000:3000"
+    image: simon-server
+    build: ./
+    networks:
+      - simon-network
+  mongo-db:
+    image: mongo
+    container_name: simon-mongo-db
+    ports:
+      - "27017-27019:27017-27019"
+    networks:
+      - simon-network
+networks:
+  simon-network:
+    name: simon-network
+    driver: bridge
