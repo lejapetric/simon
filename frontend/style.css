@@ -277,6 +277,23 @@ h1, h2, h3, h4 {
     text-decoration: underline;
 }
 
+/* ===== RESPONSIVE ZA O NAS SEKCIJO ===== */
+@media screen and (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .about-image {
+        grid-row: 2;
+        margin-top: 30px;
+    }
+    
+    .about-text .btn {
+        margin-top: 20px;
+        display: inline-block;
+    }
+}
+
 /* ===== ABOUT PAGE STYLES ===== */
 .about-content {
     max-width: 900px;
