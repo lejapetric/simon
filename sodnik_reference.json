@@ -1,476 +1,464 @@
 [
   {
-    "ime_projekta": "Stanovanjski objekt Vodice",
-    "opravljena_dela": [
-      "Izdelava lesene konstrukcije",
-      "krovsko kleparska dela"
-    ],
-    "datum_izdelave": {
-      "mesec": null,
-      "leto": 2009
-    },
-    "podrobnosti": "Kritina Creaton Bobrovec",
-    "slike": []
-  },
-  {
-    "ime_projekta": "Stanovanjski objekt Medvode",
-    "opravljena_dela": [
-      "Zamenjava strešne kritine"
-    ],
-    "datum_izdelave": {
-      "mesec": null,
-      "leto": 2009
-    },
-    "podrobnosti": "Kritina Creaton Maxima",
-    "slike": []
-  },
-  {
-    "ime_projekta": "Poslovno-stanovanjski objekt Zalog",
-    "opravljena_dela": [
-      "Izdelava lesene konstrukcije",
-      "krovsko kleparska dela"
-    ],
-    "datum_izdelave": {
-      "mesec": null,
-      "leto": 2007
-    },
-    "podrobnosti": "Kritina Tondach Bobrovec",
-    "slike": []
-  },
-  {
-    "ime_projekta": "Stanovanjski objekt Cerklje",
-    "opravljena_dela": [
-      "Izdelava lesene konstrukcije",
-      "krovsko kleparska dela"
-    ],
-    "datum_izdelave": {
-      "mesec": null,
-      "leto": 2006
-    },
-    "podrobnosti": "Kritina Tondach Strangfalz",
-    "slike": []
-  },
-  {
-    "ime_projekta": "Stanovanjski objekt Vodice (vgradnja Velux)",
-    "opravljena_dela": [
-      "Izdelava lesene konstrukcije",
-      "krovsko kleparska dela"
-    ],
-    "datum_izdelave": {
-      "mesec": null,
-      "leto": 2009
-    },
-    "podrobnosti": "Kritina Creaton Bobrovec, Vgradnja Velux oken",
-    "slike": []
-  },
-  {
     "ime_projekta": "Poslovno-stanovanjski objekt Kamnik",
-    "opravljena_dela": [],
+    "opravljena_dela": "Sanacija strehe in izdelava zračnega kanala",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2010
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Norma",
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Ljubljana",
-    "opravljena_dela": [],
+    "opravljena_dela": "Zamenjava strešne kritine",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "julij",
       "leto": 2010
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Mulde",
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Kranj",
-    "opravljena_dela": [],
+    "opravljena_dela": "Zamenjava strešne kritine",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "april",
       "leto": 2010
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Bobrovec",
+    "slike": null
   },
   {
     "ime_projekta": "Nadstrešek k objektu v Medvodah",
-    "opravljena_dela": [],
+    "opravljena_dela": "Izdelava lesene konstrukcije in krovsko kleparska dela",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "oktober",
       "leto": 2009
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Landach",
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Cerklje",
-    "opravljena_dela": [],
+    "opravljena_dela": "Izdelava lesene konstrukcije in krovsko kleparska dela",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2008
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Landach",
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Medvode",
-    "opravljena_dela": [],
+    "opravljena_dela": "Zamenjava strešne kritine",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "avgust",
       "leto": 2008
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Landach",
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Medvode",
-    "opravljena_dela": [],
+    "opravljena_dela": "Zamenjava strešne kritine",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "maj",
       "leto": 2008
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Landach",
+    "slike": null
   },
   {
     "ime_projekta": "Poslovno-stanovanjski objekt Zalog",
-    "opravljena_dela": [],
+    "opravljena_dela": "Izdelava lesene konstrukcije in krovsko kleparska dela",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "maj",
       "leto": 2007
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Bobrovec",
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Češnjevek",
-    "opravljena_dela": [],
+    "opravljena_dela": "Izdelava lesene konstrukcije in krovsko kleparska dela",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2006
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Bobrovec",
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Cerklje",
-    "opravljena_dela": [],
+    "opravljena_dela": "Izdelava lesene konstrukcije in krovsko kleparska dela",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "avgust",
       "leto": 2006
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Strangfalz",
+    "slike": null
   },
   {
     "ime_projekta": "Poslovni objekt pošta Šenčur",
-    "opravljena_dela": [],
+    "opravljena_dela": "Zamenjava strešne kritine",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "avgust",
       "leto": 2005
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Bobrovec",
+    "slike": null
   },
   {
     "ime_projekta": "Poslovni objekt banka Šenčur",
-    "opravljena_dela": [],
+    "opravljena_dela": "Zamenjava strešne kritine",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "januar",
       "leto": 2004
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Bobrovec",
+    "slike": null
   },
   {
     "ime_projekta": "Sakralni objekt cerkev Zalog",
-    "opravljena_dela": [],
+    "opravljena_dela": "Zamenjava strešne kritine in obnovitev zvonika",
+    "kategorija": "Kritina Tondach",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 1998
     },
-    "podrobnosti": "Kritina Tondach",
-    "slike": []
+    "podrobnosti": "Kritina Tondach Bobrovec",
+    "slike": null
   },
   {
     "ime_projekta": "Gospodarsko poslopje Zalog",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Bramac",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2010
     },
-    "podrobnosti": "Kritina Bramac",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Zalog",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Bramac",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2009
     },
-    "podrobnosti": "Kritina Bramac",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Velesovo",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Bramac",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2009
     },
-    "podrobnosti": "Kritina Bramac",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Večstanovanjski objekt Kranj",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Bramac",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2004
     },
-    "podrobnosti": "Kritina Bramac",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Nadstrešek k objektu v Cerkljah",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Bramac",
     "datum_izdelave": {
       "mesec": "maj",
       "leto": 2004
     },
-    "podrobnosti": "Kritina Bramac",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Cerklje",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Bramac",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2002
     },
-    "podrobnosti": "Kritina Bramac",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Objekt cerkev Cerklje",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Erlus",
     "datum_izdelave": {
       "mesec": "avgust",
       "leto": 2008
     },
-    "podrobnosti": "Kritina Erlus",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Cerklje",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Creaton",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2010
     },
-    "podrobnosti": "Kritina Creaton",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Ljubljana",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Creaton",
     "datum_izdelave": {
       "mesec": "avgust",
       "leto": 2010
     },
-    "podrobnosti": "Kritina Creaton",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Virmaše - Škofja Loka",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Creaton",
     "datum_izdelave": {
       "mesec": "april",
       "leto": 2010
     },
-    "podrobnosti": "Kritina Creaton",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Poslovni objekt Kranjska Gora",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Creaton",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2009
     },
-    "podrobnosti": "Kritina Creaton",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Vodice",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Creaton",
     "datum_izdelave": {
       "mesec": "julij",
       "leto": 2009
     },
-    "podrobnosti": "Kritina Creaton",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Medvode",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Creaton",
     "datum_izdelave": {
       "mesec": "julij",
       "leto": 2009
     },
-    "podrobnosti": "Kritina Creaton",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Objekt Grad Goričane",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Creaton",
     "datum_izdelave": {
       "mesec": "julij",
       "leto": 2009
     },
-    "podrobnosti": "Kritina Creaton / Sanacije",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Vodice",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Creaton",
     "datum_izdelave": {
       "mesec": "maj",
       "leto": 2009
     },
-    "podrobnosti": "Kritina Creaton",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Škofja Loka",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Decra",
     "datum_izdelave": {
       "mesec": "maj",
       "leto": 2009
     },
-    "podrobnosti": "Kritina Decra",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Škofja Loka",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Decra",
     "datum_izdelave": {
       "mesec": "april",
       "leto": 2007
     },
-    "podrobnosti": "Kritina Decra",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
+  },
+  {
+    "ime_projekta": "Objekt Grad Goričane",
+    "opravljena_dela": null,
+    "kategorija": "Sanacije",
+    "datum_izdelave": {
+      "mesec": "julij",
+      "leto": 2009
+    },
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Sakralni objekt cerkev Lahovče",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Sanacije",
     "datum_izdelave": {
       "mesec": "junij",
       "leto": 1997
     },
-    "podrobnosti": "Sanacije",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Ljubljana",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kleparska dela",
     "datum_izdelave": {
       "mesec": "julij",
       "leto": 2009
     },
-    "podrobnosti": "Kleparska dela",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Poslovno-stanovanjski objekt Zalog",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kleparska dela",
     "datum_izdelave": {
       "mesec": "maj",
       "leto": 2007
     },
-    "podrobnosti": "Kleparska dela",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Objekt cerkev Zalog",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kleparska dela",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 1998
     },
-    "podrobnosti": "Kleparska dela",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Mehanična delavnica Citroen Mengeš",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Trimo",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2010
     },
-    "podrobnosti": "Kritina Trimo",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Medvode",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Trimo",
     "datum_izdelave": {
       "mesec": "julij",
       "leto": 2007
     },
-    "podrobnosti": "Kritina Trimo",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Stanovanjski objekt Vodice",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Velux okna",
     "datum_izdelave": {
       "mesec": "maj",
       "leto": 2009
     },
-    "podrobnosti": "Velux okna",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Nadstrešek k objektu v Cerkljah",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Nadstreški",
     "datum_izdelave": {
       "mesec": "maj",
       "leto": 2010
     },
-    "podrobnosti": "Nadstreški",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Poslovno-stanovanjski objekt Zalog",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Nadstreški",
     "datum_izdelave": {
       "mesec": "januar",
       "leto": 2010
     },
-    "podrobnosti": "Nadstreški",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Nadstrešek k stanovanjskemu objektu v Zalogu",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Nadstreški",
     "datum_izdelave": {
       "mesec": "april",
       "leto": 2007
     },
-    "podrobnosti": "Nadstreški",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   },
   {
     "ime_projekta": "Poslovno-stanovanjski objekt Kamnik",
-    "opravljena_dela": [],
+    "opravljena_dela": null,
+    "kategorija": "Kritina Bauder",
     "datum_izdelave": {
       "mesec": "september",
       "leto": 2010
     },
-    "podrobnosti": "Kritina Bauder",
-    "slike": []
+    "podrobnosti": null,
+    "slike": null
   }
 ]
