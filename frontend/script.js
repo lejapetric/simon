@@ -13,9 +13,10 @@ async function includeHTML() {
                 const content = await response.text();
                 element.innerHTML = content;
                 
-                // Po vključitvi headerja ponovno nastavi aktivni menu
+                // Po vključitvi headerja inicializiramo samo hamburger menu
                 if (file === 'header.html') {
-                    setActiveMenu();
+                    console.log('📌 Header naložen, inicializiram hamburger menu...');
+                    initHamburgerMenu();
                 }
             } else {
                 console.error('Napaka pri nalaganju:', file);
@@ -28,6 +29,79 @@ async function includeHTML() {
     }
 }
 
+// Funkcija za inicializacijo hamburger menija
+function initHamburgerMenu() {
+    // Poiščemo elemente
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    
+    // Preverimo, ali elementi obstajajo
+    if (hamburger && nav) {
+        // Odstranimo morebitne stare event listenerje
+        const newHamburger = hamburger.cloneNode(true);
+        const newNav = nav.cloneNode(true);
+        hamburger.parentNode.replaceChild(newHamburger, hamburger);
+        nav.parentNode.replaceChild(newNav, nav);
+        
+        // Ponovno poiščemo elemente po kloniranju
+        const finalHamburger = document.getElementById('hamburger');
+        const finalNav = document.getElementById('nav');
+        
+        // Ko kliknemo na hamburger gumb
+        finalHamburger.addEventListener('click', function(event) {
+            event.stopPropagation();
+            finalHamburger.classList.toggle('active');
+            finalNav.classList.toggle('active');
+            
+            if (finalNav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                document.body.classList.add('menu-open');
+            } else {
+                document.body.style.overflow = '';
+                document.body.classList.remove('menu-open');
+            }
+        });
+        
+        // Zapri meni, ko kliknemo na katerikoli link v meniju
+        const navLinks = finalNav.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                finalHamburger.classList.remove('active');
+                finalNav.classList.remove('active');
+                document.body.style.overflow = '';
+                document.body.classList.remove('menu-open');
+            });
+        });
+        
+        // Zapri meni, ko kliknemo zunaj menija
+        document.addEventListener('click', function(event) {
+            const isClickInside = finalNav.contains(event.target) || finalHamburger.contains(event.target);
+            
+            if (!isClickInside && finalNav.classList.contains('active')) {
+                finalHamburger.classList.remove('active');
+                finalNav.classList.remove('active');
+                document.body.style.overflow = '';
+                document.body.classList.remove('menu-open');
+            }
+        });
+        
+        // Zapri meni, ko se zaslon poveča čez 900px
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 900) {
+                finalHamburger.classList.remove('active');
+                finalNav.classList.remove('active');
+                document.body.style.overflow = '';
+                document.body.classList.remove('menu-open');
+            }
+        });
+        
+        console.log('✅ Hamburger menu inicializiran');
+    } else {
+        console.warn('⚠️ Hamburger menu elementi niso najdeni');
+    }
+}
+
+
 // Preveri povezavo z backendom
 async function checkBackendConnection() {
     try {
@@ -39,21 +113,6 @@ async function checkBackendConnection() {
         console.warn('⚠️ Backend ni dosegljiv:', error);
         return false;
     }
-}
-
-// Aktivni menu glede na trenutno stran
-function setActiveMenu() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
 }
 
 // Naloži projekte iz APIja
@@ -69,7 +128,6 @@ async function loadProjects(containerId, filters = {}) {
     `;
     
     try {
-        // Zgradi query string
         const queryParams = new URLSearchParams(filters).toString();
         const url = `${API_BASE}/projects${queryParams ? '?' + queryParams : ''}`;
         
@@ -132,7 +190,6 @@ async function loadStats() {
         const response = await fetch(`${API_BASE}/stats`);
         const stats = await response.json();
         
-        // Posodobi stat elemente na strani
         document.querySelectorAll('[data-stat]').forEach(el => {
             const statKey = el.getAttribute('data-stat');
             if (stats[statKey] !== undefined) {
@@ -173,13 +230,19 @@ async function submitContactForm(formData) {
     }
 }
 
+// Funkcija za inicializacijo cookie bannera
+function initCookieBanner() {
+    // Vaša koda za cookie banner
+}
+
 // Inicializacija ob nalaganju strani
 document.addEventListener('DOMContentLoaded', async () => {
+    console.log('📱 Stran se nalaga...');
+    
     // Najprej vključi header in footer
     await includeHTML();
     
     // Nato inicializiraj ostale funkcije
-    setActiveMenu();
     checkBackendConnection();
     initCookieBanner();
     
@@ -204,7 +267,34 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
-// Ponovno zaženi setActiveMenu po morebitnih dinamičnih spremembah
-window.addEventListener('popstate', () => {
-    setTimeout(setActiveMenu, 100);
-});
+// Dodamo overlay ozadje za meni
+function addMenuOverlay() {
+    const style = document.createElement('style');
+    style.textContent = `
+        body.menu-open::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        body.menu-open main,
+        body.menu-open footer {
+            pointer-events: none;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Pokličemo funkcijo za dodajanje overlay stila
+addMenuOverlay();

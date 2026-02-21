@@ -26,7 +26,7 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
-    padding-top: 0;
+    padding-top: 80px; /* Prostor za fiksni header */
 }
 
 h1, h2, h3, h4 {
@@ -103,11 +103,11 @@ h1, h2, h3, h4 {
     font-weight: 500;
 }
 
-/* MENI */
+/* MENI - DESKTOP */
 .nav-menu {
     display: flex;
-    gap: 32px;
     list-style: none;
+    gap: 32px;
     margin: 0;
     padding: 0;
 }
@@ -141,27 +141,120 @@ h1, h2, h3, h4 {
 }
 
 .nav-menu a:hover::after,
-.nav-menu a.active::after {
-    width: 100%;
-}
+
 
 .nav-menu a:hover {
     color: var(--primary);
 }
 
-.nav-menu a.active {
-    color: var(--primary);
-    font-weight: 700;
+
+/* Hamburger menu - skrit na desktopu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    z-index: 1001;
 }
 
-/* PAGE HEADER */
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* ===== TABLET in MOBILNI PRIKAZ ===== */
+@media screen and (max-width: 900px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: #fff;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+        padding-top: 80px;
+        z-index: 1000;
+    }
+    
+    .nav.active {
+        right: 0;
+    }
+    
+    .nav .nav-menu {
+        display: flex; /* Spremenjeno iz display: none */
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 2rem;
+        width: 100%;
+    }
+    
+    .nav .nav-menu li {
+        width: 100%;
+    }
+    
+    .nav .nav-menu a {
+        display: block;
+        padding: 0.8rem;
+        border-bottom: 1px solid #eee;
+        white-space: normal;
+        font-size: 16px;
+    }
+    
+    .nav .nav-menu a::after {
+        display: none; /* Skrijemo animacijo na mobilnem */
+    }
+    
+    /* Hamburger animacija - ko je aktiven */
+    .hamburger.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+/* Manjši zasloni */
+@media screen and (max-width: 480px) {
+    .logo-name {
+        font-size: 1rem;
+    }
+    
+    .logo-desc {
+        font-size: 0.8rem;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    .nav {
+        width: 100%;
+    }
+}
+
+/* ===== PAGE HEADER ===== */
 .page-header {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: var(--white);
     padding: 100px 0 80px;
     text-align: center;
     position: relative;
-    margin-top: 80px;
+    margin-top: 0;
 }
 
 .page-header h1 {
